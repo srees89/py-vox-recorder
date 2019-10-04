@@ -185,8 +185,8 @@ except getopt.GetoptError:
 	print 'py-coder-windows.py -l (list devices) -d device-id'
 	sys.exit(2)
 for opt, arg in opts:
-	if opt == '-h':
-		print 'py-coder-windows.py -l (list devices) -d device-id'
+	if opt == '-h' or "--help":
+		print ('py-coder-windows.py -l (list devices) -d device-id')
 		sys.exit()
 	elif opt in ("-l"):
 		print ("Device Information:, add proper index # to .py script")
@@ -208,3 +208,6 @@ for opt, arg in opts:
 		RT = _recordTimer()
 		RT.start()
 		app.MainLoop()
+	else:
+		print("Enter py-coder-windows.py -l to list devices") 
+		print("Then enter the device id using py-coder-windows.py -d device-id")
